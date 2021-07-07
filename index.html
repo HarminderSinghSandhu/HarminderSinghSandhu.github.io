@@ -105,14 +105,14 @@
 
         <script type="text/javascript">
             window.onAmazonLoginReady = function() {
-                amazon.Login.setClientId('ENTER_YOUR_CLIENT_ID');
+                amazon.Login.setClientId('amzn1.application-oa2-client.b548db0f248e4f19a4fd7a6fbefe2379');
             };
             window.onAmazonPaymentsReady = function() {
                 showButton();
             };
             function showButton() {
                 var authRequest;
-                OffAmazonPayments.Button("AmazonPayButton", "ENTER_YOUR_MERCHANT_ID", {
+                OffAmazonPayments.Button("AmazonPayButton", "A1DD82FYILEVPK", {
                     type: "PwA",
                     color: "Gold",
                     size: "medium",
