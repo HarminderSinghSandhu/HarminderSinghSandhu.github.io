@@ -118,7 +118,7 @@
                     size: "medium",
                     authorization: function() {
                         loginOptions = { scope: "profile payments:widget payments:shipping_address", popup: true };
-                        authRequest = amazon.Login.authorize (loginOptions, "Widgets.jsp");
+                        authRequest = amazon.Login.authorize (loginOptions, "widgets.html");
                     },
                     onError: function(error) {
                         alert(error.getErrorMessage());
