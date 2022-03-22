@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css">
+    <link rel="stylesheet" href="css/prism.css">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/prism.js"></script>
+
+    <style>
+        body {
+            padding-top: 40px;
+            padding-bottom: 50px;
+        }
+        .lpa-sdk {
+            padding: 40px 15px;
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom:10px;
+        }
+        #go-home {
+            cursor:pointer;
+        }
+        pre code {
+            overflow:scroll;
+            word-wrap:normal;
+            white-space:pre;
+        }
+        .jumbotroncolor {
+            background:rgba(0, 153, 153, 0.3);
+        }
+        .jumbotroncodecolor {
+            background:rgba(255, 204, 153, 0.4);
+        }
+    </style>
+  </head>
+    <body>
+      <div id="AmazonPayButton"></div>
+      <script src="https://static-na.payments-amazon.com/checkout.js"></script>
+      <script type="text/javascript" charset="utf-8">
+          amazon.Pay.renderButton('#AmazonPayButton', {
+              // set checkout environment
+              merchantId: 'A1DD82FYILEVPK',
+              publicKeyId: 'SANDBOX-AH2AD7D4SQICJXTWPRD2BD6I',
+              ledgerCurrency: 'USD',         
+              // customize the buyer experience
+              checkoutLanguage: 'en_US',
+              productType: 'PayAndShip',
+              placement: 'Cart',
+              buttonColor: 'Gold',
+              // configure Create Checkout Session request
+              createCheckoutSessionConfig: {                     
+                  payloadJSON: '{"checkoutSessionId":"dd59337b-4548-4dc5-a2a3-83631b74ca59","webCheckoutDetails":{"checkoutReviewReturnUrl":"https://localhost/test/CheckoutReview.php","checkoutResultReturnUrl":"https://localhost/test/CheckoutResult.php","amazonPayRedirectUrl":null,"checkoutCancelUrl":null},"productType":null,"paymentDetails":{"paymentIntent":"AuthorizeWithCapture","canHandlePendingAuthorization":false,"chargeAmount":{"amount":"3.00","currencyCode":"USD"},"totalOrderAmount":null,"softDescriptor":null,"presentmentCurrency":null,"allowOvercharge":null,"extendExpiration":null},"chargePermissionType":"OneTime","recurringMetadata":null,"merchantMetadata":{"merchantReferenceId":"xyz12345","merchantStoreName":"Harman","noteToBuyer":"","customInformation":""},"supplementaryData":null,"buyer":null,"billingAddress":null,"paymentPreferences":[null],"statusDetails":{"state":"Open","reasonCode":null,"reasonDescription":null,"lastUpdatedTimestamp":"20220322T073546Z"},"shippingAddress":null,"platformId":null,"chargePermissionId":null,"chargeId":null,"constraints":[{"constraintId":"BuyerNotAssociated","description":"There is no buyer associated with the Checkout Session. Return the checkout session id to the Amazon Pay Button to allow buyer to login."}],"creationTimestamp":"20220322T073546Z","expirationTimestamp":"20220323T073546Z","storeId":"amzn1.application-oa2-client.b548db0f248e4f19a4fd7a6fbefe2379","providerMetadata":{"providerReferenceId":null},"releaseEnvironment":"Sandbox","deliverySpecifications":null}', // string generated in step 2
+                  signature: "UP0GMutuanXqoLTrYE/ySAxdMklizaruMT5W971wIWfm1+Zz9M5PgSPGrzYRlZMgZlT2kbh0EZGcHaRShNs6MI9IgP2LHpwkp8elygKMq/kVQZ05+2kXro/93if+oH/CTgZ0JtfDtlNc5/AAYSF0sgZiusmWdvYZcx1LRcCEG4zNW5E5vvYbLqps2Z+KEnAbE8Bg4s/nPwJ1vSM4aHT6k/voxmPnmVDIk7mhnhzpXXNlUCjNCXBAWkUaLYHzhwkPbxx81P0tc4S2h6gOuZErkPvptTdI/hDaxDq82cbTIrnh5CotRObmA3aRXADhThFVXCzPJCLjIq2m+79TqIax6Q==" // signature generated in step 3
+              }   
+          });
+      </script>
+  </body>
+</html>
